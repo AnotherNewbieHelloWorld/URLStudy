@@ -10,6 +10,8 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
+    private let url = "https://s2.kinoteatr.ru/upload/movies/5083/screenshots/42162.jpg?_ga=2.23177912.384338816.1575783657-2081613416.1569727289"
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -25,18 +27,10 @@ class ImageViewController: UIViewController {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         
-        guard let url = URL(string: "https://s2.kinoteatr.ru/upload/movies/5083/screenshots/42162.jpg?_ga=2.23177912.384338816.1575783657-2081613416.1569727289") else {return}
-        
-        let session = URLSession.shared
-        session.dataTask(with: url) { (data, response, error) in
+        NetworkManager.downloadImage(url: url) { (image) in
             
-            if let data = data, let image = UIImage(data: data){
-                
-                DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.imageView.image = image
-                }
-            }
-        }.resume()
+            self.activityIndicator.stopAnimating()
+            self.imageView.image = image
+        }
     }
 }

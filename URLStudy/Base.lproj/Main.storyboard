@@ -1,96 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VeV-cb-hD7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M6q-8n-iYt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Controls-->
-        <scene sceneID="BBt-WG-9s9">
+        <scene sceneID="nJO-xO-7vq">
             <objects>
-                <viewController id="Aem-jJ-4Z1" customClass="ViewController" customModule="URLStudy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ziG-2v-ZAg">
+                <collectionViewController id="6U1-4M-29A" customClass="MainViewController" customModule="URLStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="icE-ll-1Cz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhQ-2q-8cY">
-                                <rect key="frame" x="0.0" y="88" width="414" height="170"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="ijc-AI-EJv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
-                                <state key="normal" title="Download Image">
-                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="40" minimumInteritemSpacing="40" id="yeT-xP-eJe">
+                            <size key="itemSize" width="340" height="100"/>
+                            <size key="estimatedItemSize" width="340" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="40" maxX="0.0" maxY="40"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="pfj-7M-VTh" customClass="CustomCollectionViewCell" customModule="URLStudy" customModuleProvider="target">
+                                <rect key="frame" x="37" y="40" width="340" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RXH-hP-q4f">
+                                    <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puj-RJ-ylh">
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
+                                            <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="Rke-vH-jEg"/>
+                                                <constraint firstAttribute="width" constant="340" id="nFU-uM-zA0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                            <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="puj-RJ-ylh" firstAttribute="leading" secondItem="RXH-hP-q4f" secondAttribute="leading" id="A4x-cG-uJU"/>
+                                        <constraint firstItem="puj-RJ-ylh" firstAttribute="top" secondItem="RXH-hP-q4f" secondAttribute="top" id="VcM-ho-4Xh"/>
+                                        <constraint firstAttribute="bottom" secondItem="puj-RJ-ylh" secondAttribute="bottom" id="cYw-zb-i89"/>
+                                        <constraint firstAttribute="trailing" secondItem="puj-RJ-ylh" secondAttribute="trailing" id="pt7-4p-7gX"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <connections>
-                                    <segue destination="VUL-Fz-eMa" kind="show" id="cjb-ls-Xtq"/>
+                                    <outlet property="label" destination="puj-RJ-ylh" id="ihc-0O-VPA"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhF-Bh-8hP">
-                                <rect key="frame" x="0.0" y="258" width="414" height="170"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="F72-EW-Nll"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
-                                <state key="normal" title="GET">
-                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="getRequest:" destination="Aem-jJ-4Z1" eventType="touchUpInside" id="0Ny-L8-pIR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJa-Ud-w0S">
-                                <rect key="frame" x="0.0" y="428" width="414" height="170"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="pJq-Vs-Qno"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
-                                <state key="normal" title="POST">
-                                    <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="postRequest:" destination="Aem-jJ-4Z1" eventType="touchUpInside" id="p2S-SS-ntL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keR-CL-6db">
-                                <rect key="frame" x="0.0" y="598" width="414" height="170"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="3Ie-5r-sYA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
-                                <state key="normal" title="Our courses">
-                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="postRequest:" destination="Aem-jJ-4Z1" eventType="touchUpInside" id="S9U-06-mfB"/>
-                                    <segue destination="Gq3-ev-USX" kind="show" id="4dM-El-5r4"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="keR-CL-6db" firstAttribute="leading" secondItem="ziG-2v-ZAg" secondAttribute="leading" id="0jb-jw-F7S"/>
-                            <constraint firstItem="DhQ-2q-8cY" firstAttribute="leading" secondItem="su4-Ge-uJc" secondAttribute="leading" id="0u5-5b-DUO"/>
-                            <constraint firstItem="keR-CL-6db" firstAttribute="top" secondItem="BJa-Ud-w0S" secondAttribute="bottom" id="2gP-Rq-jCv"/>
-                            <constraint firstAttribute="trailing" secondItem="BJa-Ud-w0S" secondAttribute="trailing" id="Oco-ew-Ghe"/>
-                            <constraint firstItem="FhF-Bh-8hP" firstAttribute="leading" secondItem="ziG-2v-ZAg" secondAttribute="leading" id="W6m-Tx-BV2"/>
-                            <constraint firstItem="su4-Ge-uJc" firstAttribute="trailing" secondItem="DhQ-2q-8cY" secondAttribute="trailing" id="Y92-uZ-PWS"/>
-                            <constraint firstItem="DhQ-2q-8cY" firstAttribute="top" secondItem="su4-Ge-uJc" secondAttribute="top" id="aRl-By-BZW"/>
-                            <constraint firstItem="FhF-Bh-8hP" firstAttribute="top" secondItem="DhQ-2q-8cY" secondAttribute="bottom" id="aSw-SY-97T"/>
-                            <constraint firstItem="BJa-Ud-w0S" firstAttribute="leading" secondItem="su4-Ge-uJc" secondAttribute="leading" id="bXi-dz-dws"/>
-                            <constraint firstItem="BJa-Ud-w0S" firstAttribute="top" secondItem="FhF-Bh-8hP" secondAttribute="bottom" id="cuo-MW-WMg"/>
-                            <constraint firstItem="su4-Ge-uJc" firstAttribute="trailing" secondItem="keR-CL-6db" secondAttribute="trailing" id="k3s-Zb-aGY"/>
-                            <constraint firstItem="su4-Ge-uJc" firstAttribute="trailing" secondItem="FhF-Bh-8hP" secondAttribute="trailing" id="sqs-MU-sEy"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="su4-Ge-uJc"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Controls" id="F4L-HK-x1o"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mCh-h7-c7x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="6U1-4M-29A" id="1Nm-RM-mvf"/>
+                            <outlet property="delegate" destination="6U1-4M-29A" id="gNk-e8-Xgc"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Controls" id="SrS-xv-j0L"/>
+                    <connections>
+                        <segue destination="VUL-Fz-eMa" kind="show" identifier="ShowImage" id="tzK-OE-9bZ"/>
+                        <segue destination="Gq3-ev-USX" kind="show" identifier="OurCourses" id="AJz-lv-e1L"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hwb-Np-gH8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="269.56521739130437" y="153.34821428571428"/>
+            <point key="canvasLocation" x="962.31884057971024" y="119.86607142857142"/>
         </scene>
         <!--Our courses-->
         <scene sceneID="lRh-1o-edc">
@@ -180,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwJ-CE-Kqn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="530.35714285714289"/>
+            <point key="canvasLocation" x="1952.1739130434785" y="530.35714285714289"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="pzF-EG-8Gp">
@@ -220,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44D-Ki-Xge" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1966.6666666666667" y="529.6875"/>
+            <point key="canvasLocation" x="2876.811594202899" y="529.6875"/>
         </scene>
         <!--Image-->
         <scene sceneID="06G-x5-0cj">
@@ -257,33 +237,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S5C-DF-UPw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="-333"/>
+            <point key="canvasLocation" x="1966.6666666666667" y="-333.48214285714283"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="tBC-lf-HvM">
+        <scene sceneID="enu-BB-ULM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VeV-cb-hD7" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M6q-8n-iYt" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7sP-01-TFl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="n9q-DV-OG0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Aem-jJ-4Z1" kind="relationship" relationship="rootViewController" id="bky-UE-D68"/>
+                        <segue destination="6U1-4M-29A" kind="relationship" relationship="rootViewController" id="n5H-Vl-ikx"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P91-dl-nsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F3e-Li-j9J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-580" y="154"/>
+            <point key="canvasLocation" x="52.173913043478265" y="119.86607142857142"/>
         </scene>
     </scenes>
 </document>
