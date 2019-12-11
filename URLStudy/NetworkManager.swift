@@ -80,10 +80,6 @@ class NetworkManager{
     
     static func fetchData(url: String, completion: @escaping (_ courses: [Course]) -> () ){
         
-        //let jsonUrlString = "https://swiftbook.ru//wp-content/uploads/api/api_course"
-        let jsonUrlString = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
-        //"https://swiftbook.ru//wp-content/uploads/api/api_website_description"
-        
         guard let url = URL(string: url) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -97,6 +93,35 @@ class NetworkManager{
             }
             catch let error{
                 print("Error serialization json", error)
+            }
+        }.resume()
+    }
+    
+    static func uploadImage(url: String){
+        
+        let image = UIImage(named: "Notification")!
+        let httpHeaders = ["Authorization": "Client-ID a4e801f8c3dc3fb"]
+        guard let imageProperties = ImageProperties(withImage: image, forKey: "image") else { return }
+        guard let url = URL(string: url) else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = httpHeaders
+        request.httpBody = imageProperties.data
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            if let response = response{
+                print(response)
+            }
+            if let data = data{
+                do{
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
+                }
+                catch{
+                    print(error)
+                }
             }
         }.resume()
     }
