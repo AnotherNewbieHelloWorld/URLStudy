@@ -83,6 +83,7 @@ extension CoursesViewController: UITableViewDataSource{
         return cell
     }
 }
+
 extension CoursesViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
